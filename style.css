@@ -13,8 +13,26 @@ body {
 
 }
 
-h2 {
-    text-align: center;
+.btn-reload {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 120px;
+    height:40px;
+    margin-right: 30px;
+    border-radius: 5px;
+    border-style: none;
+    font-weight: bolder;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.5;
 }
 
 #cardboard {
@@ -66,5 +84,4 @@ h2 {
     transform: rotateY(180deg);
     
 }
-
 

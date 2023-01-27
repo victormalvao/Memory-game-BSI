@@ -94,7 +94,10 @@ function checkForMatch() {
 
 
 
-// função disableCars que 
+// função disableCars que remove o .flip  da class=".memory-card.flip" quando não há um match entre as duas.
+//lockcard recebe o valor true novamente.
+//setTimeout serve para dar tempo de remover o flip do nome da class, caso clique muito rapido pode nao cosnegui remover sem essa função.
+//resetar as variaveis firstCard, secondCard, lockCard.
 function disableCards() {
     lockCard = true;
     
@@ -120,13 +123,20 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
 
 //Trecho responsável por disparar um alert quando todas as cartas foram acertas.
-//Ao clicar no ok 
+//SetInterval fica vericando a cada 5s se todas as cartas acertadas receberam a class="memory-card flip";
+//Quando a condição é alcançada, dispara um alert com mensagem. 
+//windows.location.reload recarrega a pagina a clicar no 'ok' do alert.  
 
 let flipped = document.getElementsByClassName("memory-card flip")
 
 setInterval(function checkEndGame() {
     if(flipped.length === 12) {
         alert('Parabéns, você conseguiu !!!')
-        windows.location.reload();
+        window.location.reload();
     }
 }, 5000);
+
+
+function Refresh() {
+    window.location.reload();
+}
